@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This lab rwill give you a chance to practice generating some basic visualizations using the techniques learnt in the previous lesson. 
+This lab will give you a chance to practice generating some basic visualizations using the techniques learnt in the previous lesson. 
 
 ## Objectives
 You will be able to:
