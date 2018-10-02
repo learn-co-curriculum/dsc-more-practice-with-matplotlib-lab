@@ -1,16 +1,14 @@
 
-# Customizing Visualization with `matplotlib` 
-## Objectives
-
-* Understand matplotlib plot structure for customizing plots.
-* Differentiate between absolute and relative plotting techniques.
-* Implement and tweak high level objects in matplotlib including figure and axes.
-
-
+# Customizing Visualization with Matplotlib - Lab
 
 ## Introduction
 
-This lab requires you to draw some basic visualizations using the techniques learnt in the previous lesson. 
+This lab rwill give you a chance to practice generating some basic visualizations using the techniques learnt in the previous lesson. 
+
+## Objectives
+You will be able to:
+* Change styles and attributes for plotting objects in python to allow customisation
+* Customize plots with titles, labels and positioning
 
 Let's let's give you a head start by generating some data for you to plot:
 
@@ -76,7 +74,7 @@ Perform the following steps in the cell below:
 ```
 
 
-![png](index_files/index_6_0.png)
+![png](index_files/index_9_0.png)
 
 
 This was easy, let's move on to drawing multiple plots within a figure space. 
@@ -96,7 +94,7 @@ Perform following actions:
 ```
 
 
-![png](index_files/index_8_0.png)
+![png](index_files/index_11_0.png)
 
 
 ## Exercise 3
@@ -122,7 +120,7 @@ Perform following tasks in the cell below:
 ```
 
 
-![png](index_files/index_10_0.png)
+![png](index_files/index_13_0.png)
 
 
 ## Exercise 4
@@ -142,7 +140,7 @@ Perform following steps in the cell below:
 ```
 
 
-![png](index_files/index_12_0.png)
+![png](index_files/index_15_0.png)
 
 
 ## Exercise 5
@@ -155,7 +153,7 @@ Above figure looks fine but a bit out of proportion. Let's resize this to make t
 ```
 
 
-![png](index_files/index_14_0.png)
+![png](index_files/index_17_0.png)
 
 
 Congratulations, You have now learnt the basics plotting/labelling and customization techniques in matplotlib. Following lessons will focus on employing these techniques to plot for multiple data types in different analysis contexts. 
