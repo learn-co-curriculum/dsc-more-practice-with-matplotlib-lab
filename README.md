@@ -1,5 +1,6 @@
 
-# Customizing Visualization with `matplotlib` 
+# Customizing Visualizations with Matplotlib
+
 ## Objectives
 
 * Understand matplotlib plot structure for customizing plots.
