@@ -161,4 +161,4 @@ Congratulations, You have now learnt the basics plotting/labelling and customiza
 
 ### Summary :
 
-This lab focused on ensuring that you understand the basics plotting techqniues in matplotlib using plotting objects and functions to draw single plots, multiple/subplots using absolute and relative plotting. You also learnt how to customize the plots with labels, titles and axes definitions. 
+This lab focused on ensuring that you understand the basics plotting techniques in matplotlib using plotting objects and functions to draw single plots, multiple/subplots using absolute and relative plotting. You also learnt how to customize the plots with labels, titles and axes definitions. 
