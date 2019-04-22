@@ -51,7 +51,7 @@ print (x, y, z)
      4900 5041 5184 5329 5476 5625 5776 5929 6084 6241 6400 6561 6724 6889
      7056 7225 7396 7569 7744 7921 8100 8281 8464 8649 8836 9025 9216 9409
      9604 9801]
-    
+
 
 Import `matplotlib.pyplot` as `plt` and set `%matplotlib inline`  for generating inline images in jupyter notebooks.
 >**Notes:** After finishing this lesson comment out the line for `%matplotlib inline` to pass the pytest
@@ -87,7 +87,7 @@ plt.show()
 ```
 
 
-![png](output_5_0.png)
+![png](index_files/index_5_0.png)
 
 
 This was easy, let's move on to drawing multiple plots within a figure space. 
@@ -96,75 +96,47 @@ This was easy, let's move on to drawing multiple plots within a figure space.
 
 Perform following actions:
 
-* Create a figure object `fig` and put two axes on it, `ax1` and `ax2`. 
-* Set the locations of `ax1` and `ax2` at [0,0,1,1] and [.2,.6,.3,.3] respectively.
-* Plot x and y on both axes. 
-* Label the axes with variable names and give the plots titles as "Small Plot" and "Large Plot". 
+* Create a subplots figure with 3 rows and 4 columns
+* Plot the lines $y=x$, $y=2x$, $y=3x$, $y=4x$,...$y=10x$, $y=11x$, $y=12x$ in the respective subplots over the domain [0,10].
 
 
 ```python
-fig = plt.figure()
-ax1 = fig.add_axes([0,0,1,1])
-ax2 = fig.add_axes([.2,.6,.3,.3])
-
-ax1.plot(x,y)
-ax1.set_xlabel('variable - x')
-ax1.set_ylabel('variable - y')
-ax1.set_title("Large Plot")
-
-ax2.plot(x,y)
-ax2.set_xlabel('variable - x')
-ax2.set_ylabel('variable - y')
-ax2.set_title("Small Plot")
-plt.show()
+fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(10,10))
+x = np.linspace(0,10, 21)
+for i in range(1,13):
+    row = (i-1)//4
+    col = i%4-1
+    ax = axes[row][col]
+    y = [xi*i for xi in x]
+    ax.plot(x, y)
+    ax.set_title('{}*x'.format(i))
 ```
 
 
-![png](output_7_0.png)
+![png](index_files/index_7_0.png)
 
 
 ## Exercise 3
 
-Perform following tasks in the cell below:
-
-* Create a new figure of size 8 x 6 inches. 
-* Create the plot below by adding two absolute axes to the figure object at [0,0,1,1] and [0.2,0.5,.4,.4].
-
-* Use x,y, and z arrays to create:
-    * Large plot between x and z. 
-    * Small (inserted) plot between x and y. 
-
-* Set the axes range for small plot as 15 - 45 for x-axis, and 30 - 80 for y -axis
-* Set the line color for outer and inserted plots as green and red respectively
-* Label your axes and give suitable titles to the plot.
-
+Repeat the above exercise, but standardize the axes of all of your subplots so that you can more easily compare the slopes of the lines.
 
 
 
 ```python
-fig = plt.figure(figsize = (8,6))
-
-ax = fig.add_axes([0,0,1,1])
-ax2 = fig.add_axes([0.2,0.5,.4,.4])
-
-ax.plot(x,z, color = 'green')
-ax.set_xlabel('variable - x')
-ax.set_ylabel('variable - z')
-ax.set_title ('Outer Plot')
-
-
-ax2.plot(x,y, color = 'red')
-ax2.set_xlabel('variable - x')
-ax2.set_ylabel('variable - y')
-ax2.set_title('Inserted Plot')
-ax2.set_xlim(15,30)
-ax2.set_ylim(30,80)
-
-plt.show()
+fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(10,10))
+x = np.linspace(0,10, 21)
+for i in range(1,13):
+    row = (i-1)//4
+    col = i%4-1
+    ax = axes[row][col]
+    y = [xi*i for xi in x]
+    ax.plot(x, y)
+    ax.set_title('{}*x'.format(i))
+    ax.set_yticks(np.linspace(0,120,11))
 ```
 
 
-![png](output_9_0.png)
+![png](index_files/index_9_0.png)
 
 
 ## Exercise 4
@@ -200,7 +172,7 @@ plt.show()
 ```
 
 
-![png](output_11_0.png)
+![png](index_files/index_11_0.png)
 
 
 ## Exercise 5
@@ -229,7 +201,7 @@ plt.show()
 ```
 
 
-![png](output_13_0.png)
+![png](index_files/index_13_0.png)
 
 
 Congratulations, You have now learned the basics plotting/labeling and customization techniques in matplotlib. Following lessons will focus on employing these techniques to plot for multiple data types in different analysis contexts. 
