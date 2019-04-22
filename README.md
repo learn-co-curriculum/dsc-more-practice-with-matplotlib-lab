@@ -1,21 +1,17 @@
 
 # Customizing Visualizations with Matplotlib
 
+## Introduction
+
+This lab requires you to draw some basic visualizations using the techniques from the previous lesson. 
+
 ## Objectives
 
 * Understand matplotlib plot structure for customizing plots.
 * Differentiate between absolute and relative plotting techniques.
 * Implement and tweak high level objects in matplotlib including figure and axes.
 
-
-
-## Introduction
-
-This lab requires you to draw some basic visualizations using the techniques learned in the previous lesson. 
-
-Let's let's give you a head start by generating some data for you to plot:
-
-We are performing following tasks:
+Let's give you a head start by generating some data for you to plot:
 
 
 ```python
@@ -54,7 +50,6 @@ print (x, y, z)
 
 
 Import `matplotlib.pyplot` as `plt` and set `%matplotlib inline`  for generating inline images in jupyter notebooks.
->**Notes:** After finishing this lesson comment out the line for `%matplotlib inline` to pass the pytest
 
 
 ```python
