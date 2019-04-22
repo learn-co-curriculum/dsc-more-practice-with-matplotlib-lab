@@ -204,7 +204,7 @@ plt.show()
 ![png](index_files/index_13_0.png)
 
 
-Congratulations, You have now learned the basics plotting/labeling and customization techniques in matplotlib. Following lessons will focus on employing these techniques to plot for multiple data types in different analysis contexts. 
+Congratulations! You've now learned the basics of plotting, labeling and customizing plot with matplotlib. The following lessons will focus on employing these techniques to plot multiple data types in different contexts. 
 
 
 ## Summary
