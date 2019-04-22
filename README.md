@@ -48,7 +48,7 @@ print (x, y, z)
      4900 5041 5184 5329 5476 5625 5776 5929 6084 6241 6400 6561 6724 6889
      7056 7225 7396 7569 7744 7921 8100 8281 8464 8649 8836 9025 9216 9409
      9604 9801]
-    
+
 
 Import `matplotlib.pyplot` as `plt` and set `%matplotlib inline`  for generating inline images in jupyter notebooks. 
 
@@ -57,8 +57,6 @@ Import `matplotlib.pyplot` as `plt` and set `%matplotlib inline`  for generating
 # import matplotlib.pyplot and set inline plotting 
 
 ```
-
-Now that we have our data all set and matplotlib in our python environment, we can try some basic plotting techniques.
 
 ## Exercise 1
 
@@ -74,7 +72,7 @@ Perform the following steps in the cell below:
 ```
 
 
-![png](output_6_0.png)
+![png](index_files/index_5_0.png)
 
 
 This was easy, let's move on to drawing multiple plots within a figure space. 
@@ -94,7 +92,7 @@ Perform following actions:
 ```
 
 
-![png](output_8_0.png)
+![png](index_files/index_7_0.png)
 
 
 ## Exercise 3
@@ -120,7 +118,7 @@ Perform following tasks in the cell below:
 ```
 
 
-![png](output_10_0.png)
+![png](index_files/index_9_0.png)
 
 
 ## Exercise 4
@@ -140,7 +138,7 @@ Perform following steps in the cell below:
 ```
 
 
-![png](output_12_0.png)
+![png](index_files/index_11_0.png)
 
 
 ## Exercise 5
@@ -153,7 +151,7 @@ Above figure looks fine but a bit out of proportion. Let's resize this to make t
 ```
 
 
-![png](output_14_0.png)
+![png](index_files/index_13_0.png)
 
 
 Congratulations, You have now learnt the basics plotting/labelling and customization techniques in matplotlib. Following lessons will focus on employing these techniques to plot for multiple data types in different analysis contexts. 
