@@ -74,7 +74,7 @@ Perform the following steps in the cell below:
 ```python
 fig = plt.figure()
 ax = fig.add_axes([0,0,1,1])
-ax.plot(x,z)
+ax.plot(x,y)
 ax.set_xlabel('x-axis label')
 ax.set_ylabel('y-axis label')
 ax.set_title('Plot title')
@@ -167,7 +167,63 @@ plt.show()
 ```
 
 
-![png](index_files/index_11_0.png)
+    ---------------------------------------------------------------------------
+
+    ValueError                                Traceback (most recent call last)
+
+    <ipython-input-6-2aac841c71db> in <module>()
+          5 
+          6 ax.plot(x, y, color='red', linewidth=3, linestyle = ':')
+    ----> 7 ax2.plot(x, z, color='blue', linewidth=5, linestyle = '-.')
+          8 
+          9 ax.set_xlabel('variable - x')
+
+
+    ~/anaconda3/lib/python3.6/site-packages/matplotlib/__init__.py in inner(ax, *args, **kwargs)
+       1853                         "the Matplotlib list!)" % (label_namer, func.__name__),
+       1854                         RuntimeWarning, stacklevel=2)
+    -> 1855             return func(ax, *args, **kwargs)
+       1856 
+       1857         inner.__doc__ = _add_data_doc(inner.__doc__,
+
+
+    ~/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_axes.py in plot(self, *args, **kwargs)
+       1525         kwargs = cbook.normalize_kwargs(kwargs, _alias_map)
+       1526 
+    -> 1527         for line in self._get_lines(*args, **kwargs):
+       1528             self.add_line(line)
+       1529             lines.append(line)
+
+
+    ~/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_base.py in _grab_next_args(self, *args, **kwargs)
+        404                 this += args[0],
+        405                 args = args[1:]
+    --> 406             for seg in self._plot_args(this, kwargs):
+        407                 yield seg
+        408 
+
+
+    ~/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_base.py in _plot_args(self, tup, kwargs)
+        381             x, y = index_of(tup[-1])
+        382 
+    --> 383         x, y = self._xy_from_xy(x, y)
+        384 
+        385         if self.command == 'plot':
+
+
+    ~/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_base.py in _xy_from_xy(self, x, y)
+        240         if x.shape[0] != y.shape[0]:
+        241             raise ValueError("x and y must have same first dimension, but "
+    --> 242                              "have shapes {} and {}".format(x.shape, y.shape))
+        243         if x.ndim > 2 or y.ndim > 2:
+        244             raise ValueError("x and y can be no greater than 2-D, but have "
+
+
+    ValueError: x and y must have same first dimension, but have shapes (21,) and (100,)
+
+
+
+![png](index_files/index_11_1.png)
 
 
 ## Exercise 5
@@ -194,10 +250,6 @@ ax2.set_title ('Right Plot')
 
 plt.show()
 ```
-
-
-![png](index_files/index_13_0.png)
-
 
 Congratulations! You've now learned the basics of plotting, labeling and customizing plot with matplotlib. The following lessons will focus on employing these techniques to plot multiple data types in different contexts. 
 
