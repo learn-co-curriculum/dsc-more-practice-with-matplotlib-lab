@@ -113,7 +113,7 @@ Repeat the above exercise, but standardize the axes of all of your subplots so t
 Perform following steps in the cell below:
 
 * Create a figure of size 8x6 inches
-* Add two axes using relative subplots to the figure by dividing it in 1 row and 2 columns
+* Add two axes to the figure by dividing it in 1 row and 2 columns with the `add_subplot` method 
 * Plot (x,y) and (x,z) on the ax1 and ax2 respectively. 
 * Set the line width of first axes to 3, line style as dotted and color it red.
 * Set the line width of second axes to 5, line style as dash-dot (-.) and color it blue.
