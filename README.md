@@ -195,6 +195,10 @@ ax2.set_title ('Right Plot')
 plt.show()
 ```
 
+
+![png](index_files/index_13_0.png)
+
+
 Congratulations! You've now learned the basics of plotting, labeling and customizing plot with matplotlib. The following lessons will focus on employing these techniques to plot multiple data types in different contexts. 
 
 
