@@ -96,7 +96,7 @@ Perform following actions:
 
 ## Exercise 3
 
-Repeat the above exercise, but standardize the axes of all of your subplots so that you can more easily compare the slopes of the lines.
+Repeat the above exercise, but standardize the axes of all of your subplots so that you can more easily compare the slopes of the lines. You might need to make your figure bigger to keep the y-axis labels legible.
 
 
 
