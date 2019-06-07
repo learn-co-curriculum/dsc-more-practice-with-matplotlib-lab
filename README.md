@@ -97,13 +97,13 @@ Perform following actions:
 
 ```python
 fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(10,10))
-x = np.linspace(0,10, 21)
+
 for i in range(1,13):
     row = (i-1)//4
     col = i%4-1
     ax = axes[row][col]
-    y = [xi*i for xi in x]
-    ax.plot(x, y)
+    y_new = [xi*i for xi in x]
+    ax.plot(x, y_new)
     ax.set_title('{}*x'.format(i))
 ```
 
@@ -113,18 +113,18 @@ for i in range(1,13):
 
 ## Exercise 3
 
-Repeat the above exercise, but standardize the axes of all of your subplots so that you can more easily compare the slopes of the lines.
+Repeat the above exercise, but standardize the axes of all of your subplots so that you can more easily compare the slopes of the lines. You might need to make your figure bigger to keep the y-axis labels legible.
 
 
 
 ```python
-fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(10,10))
-x = np.linspace(0,10, 21)
+fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(13,13))
+
 for i in range(1,13):
     row = (i-1)//4
     col = i%4-1
     ax = axes[row][col]
-    y = [xi*i for xi in x]
+    y_new = [xi*i for xi in x]
     ax.plot(x, y)
     ax.set_title('{}*x'.format(i))
     ax.set_yticks(np.linspace(0,120,11))
@@ -139,7 +139,7 @@ for i in range(1,13):
 Perform following steps in the cell below:
 
 * Create a figure of size 8x6 inches
-* Add two axes using relative subplots to the figure by dividing it in 1 row and 2 columns
+* Add two axes to the figure by dividing it in 1 row and 2 columns with the `add_subplot` method 
 * Plot (x,y) and (x,z) on the ax1 and ax2 respectively. 
 * Set the line width of first axes to 3, line style as dotted and color it red.
 * Set the line width of second axes to 5, line style as dash-dot (-.) and color it blue.
@@ -167,63 +167,7 @@ plt.show()
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    ValueError                                Traceback (most recent call last)
-
-    <ipython-input-6-2aac841c71db> in <module>()
-          5 
-          6 ax.plot(x, y, color='red', linewidth=3, linestyle = ':')
-    ----> 7 ax2.plot(x, z, color='blue', linewidth=5, linestyle = '-.')
-          8 
-          9 ax.set_xlabel('variable - x')
-
-
-    ~/anaconda3/lib/python3.6/site-packages/matplotlib/__init__.py in inner(ax, *args, **kwargs)
-       1853                         "the Matplotlib list!)" % (label_namer, func.__name__),
-       1854                         RuntimeWarning, stacklevel=2)
-    -> 1855             return func(ax, *args, **kwargs)
-       1856 
-       1857         inner.__doc__ = _add_data_doc(inner.__doc__,
-
-
-    ~/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_axes.py in plot(self, *args, **kwargs)
-       1525         kwargs = cbook.normalize_kwargs(kwargs, _alias_map)
-       1526 
-    -> 1527         for line in self._get_lines(*args, **kwargs):
-       1528             self.add_line(line)
-       1529             lines.append(line)
-
-
-    ~/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_base.py in _grab_next_args(self, *args, **kwargs)
-        404                 this += args[0],
-        405                 args = args[1:]
-    --> 406             for seg in self._plot_args(this, kwargs):
-        407                 yield seg
-        408 
-
-
-    ~/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_base.py in _plot_args(self, tup, kwargs)
-        381             x, y = index_of(tup[-1])
-        382 
-    --> 383         x, y = self._xy_from_xy(x, y)
-        384 
-        385         if self.command == 'plot':
-
-
-    ~/anaconda3/lib/python3.6/site-packages/matplotlib/axes/_base.py in _xy_from_xy(self, x, y)
-        240         if x.shape[0] != y.shape[0]:
-        241             raise ValueError("x and y must have same first dimension, but "
-    --> 242                              "have shapes {} and {}".format(x.shape, y.shape))
-        243         if x.ndim > 2 or y.ndim > 2:
-        244             raise ValueError("x and y can be no greater than 2-D, but have "
-
-
-    ValueError: x and y must have same first dimension, but have shapes (21,) and (100,)
-
-
-
-![png](index_files/index_11_1.png)
+![png](index_files/index_11_0.png)
 
 
 ## Exercise 5
