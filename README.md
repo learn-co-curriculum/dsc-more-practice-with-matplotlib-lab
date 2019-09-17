@@ -1,5 +1,5 @@
 
-# Customizing Visualizations with Matplotlib
+# Customizing Visualizations with Matplotlib - Lab
 
 ## Introduction
 
