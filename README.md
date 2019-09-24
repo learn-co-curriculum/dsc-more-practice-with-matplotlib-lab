@@ -7,9 +7,9 @@ This lab requires you to draw some basic visualizations using the techniques fro
 
 ## Objectives
 
-* Understand matplotlib plot structure for customizing plots.
-* Differentiate between absolute and relative plotting techniques.
-* Implement and tweak high level objects in matplotlib including figure and axes.
+* Understand `matplotlib` plot structure for customizing plots 
+* Differentiate between absolute and relative plotting techniques 
+* Implement and tweak high level objects in `matplotlib` including figure and axes  
 
 Let's give you a head start by generating some data for you to plot:
 
@@ -90,7 +90,7 @@ Import `matplotlib.pyplot` as `plt` and set `%matplotlib inline`  for generating
 
 
 ```python
-# import matplotlib.pyplot and set inline plotting 
+# Import matplotlib.pyplot and set inline plotting 
 
 ```
 
@@ -104,19 +104,19 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-Now that we have our data all set and matplotlib in our python environment, we can try some basic plotting techniques.
+Now that we have our data all set and `matplotlib` in our Python environment, we can try some basic plotting techniques.
 
 ## Exercise 1
 
 Perform the following steps in the cell below:
 
-* Create a new figure object `fig` using `.figure()` function.
-* Use `add_axes()` to add an axis `ax` to the canvas at absolute location [0,0,1,1].
-* Plot (x,y) on that axes and set the labels and title. 
+* Create a new figure object `fig` using the `figure()` function 
+* Use `add_axes()` to add an axis `ax` to the canvas at absolute location [0,0,1,1] 
+* Plot (x,y) on that axes and set the labels and title 
 
 
 ```python
-
+# Your code goes here
 ```
 
 
@@ -146,11 +146,11 @@ This was easy, let's move on to drawing multiple plots within a figure space.
 Perform following actions:
 
 * Create a subplots figure with 3 rows and 4 columns
-* Plot the lines $y=x$, $y=2x$, $y=3x$, $y=4x$,...$y=10x$, $y=11x$, $y=12x$ in the respective subplots over the domain [0,10].
+* Plot the lines $y=x$, $y=2x$, $y=3x$, $y=4x$,...$y=10x$, $y=11x$, $y=12x$ in the respective subplots over the domain [0,10] 
 
 
 ```python
-
+# Your code goes here
 ```
 
 
@@ -182,7 +182,7 @@ Repeat the above exercise, but standardize the axes of all of your subplots so t
 
 
 ```python
-
+# Your code goes here
 ```
 
 
@@ -212,16 +212,16 @@ for i in range(1,13):
 
 Perform following steps in the cell below:
 
-* Create a figure of size 8x6 inches
-* Add two axes to the figure by dividing it in 1 row and 2 columns with the `add_subplot` method 
-* Plot (x,y) and (x,z) on the ax1 and ax2 respectively. 
-* Set the line width of first axes to 3, line style as dotted and color it red.
-* Set the line width of second axes to 5, line style as dash-dot (-.) and color it blue.
+* Create a figure of size 8x6 inches 
+* Add two axes to the figure by dividing it in 1 row and 2 columns with the `.add_subplot()` method 
+* Plot (x,y) and (x,z) on the `ax1` and `ax2` respectively  
+* Set the line width of first axes to 3, line style as dotted and color it red 
+* Set the line width of second axes to 5, line style as dash-dot (-.) and color it blue 
 * Give the plots some labels and titles
 
 
 ```python
-
+# Your code goes here
 ```
 
 
@@ -260,7 +260,7 @@ Above figure looks fine but a bit out of proportion. Let's resize this to make t
 
 
 ```python
-
+# Your code goes here
 ```
 
 
@@ -293,9 +293,8 @@ plt.show()
 ![png](index_files/index_20_0.png)
 
 
-Congratulations! You've now learned the basics of plotting, labeling and customizing plot with matplotlib. The following lessons will focus on employing these techniques to plot multiple data types in different contexts. 
-
+Congratulations! You've now learned the basics of plotting, labeling, and customizing plots with `matplotlib`. The following lessons will focus on employing these techniques to plot multiple data types in different contexts. 
 
 ## Summary
 
-This lab focused on ensuring that you understand the basics plotting techniques in matplotlib using plotting objects and functions to draw single plots, multiple/subplots using absolute and relative plotting. You also learned how to customize the plots with labels, titles and axes definitions. 
+This lab focused on ensuring that you understand the basic plotting techniques in `matplotlib` using plotting objects and functions to draw single plots, multiple/subplots using absolute and relative plotting. You also learned how to customize the plots with labels, titles, and axes definitions. 
