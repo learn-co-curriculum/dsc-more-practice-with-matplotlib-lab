@@ -7,9 +7,12 @@ This lab requires you to draw some basic visualizations using the techniques fro
 
 ## Objectives
 
-* Understand matplotlib plot structure for customizing plots.
-* Differentiate between absolute and relative plotting techniques.
-* Implement and tweak high level objects in matplotlib including figure and axes.
+You will be able to:
+
+* Create subplots using a Matplotlib figure
+* Use different linestyles within a Matplotlib visualization
+* Create labels and titles for visualizations
+* Create a lineplot using linspace
 
 Let's give you a head start by generating some data for you to plot:
 
