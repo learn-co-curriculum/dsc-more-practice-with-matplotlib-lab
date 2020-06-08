@@ -128,7 +128,7 @@ for i in range(1,13):
     col = i%4-1
     ax = axes[row][col]
     y_new = [xi*i for xi in x]
-    ax.plot(x, y)
+    ax.plot(x, y_new)
     ax.set_title('{}*x'.format(i))
     ax.set_yticks(np.linspace(0,120,11))
 ```
