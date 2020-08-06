@@ -1,4 +1,3 @@
-
 # Customizing Visualizations with Matplotlib - Lab
 
 ## Introduction
@@ -163,7 +162,7 @@ Perform following actions:
 
 ```python
 # __SOLUTION__ 
-fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(10,10))
+fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(15,15))
 
 for i in range(1,13):
     row = (i-1)//4
@@ -195,7 +194,7 @@ Repeat the above exercise, but standardize the axes of all of your subplots so t
 
 ```python
 # __SOLUTION__ 
-fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(13,13))
+fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(15,15))
 
 for i in range(1,13):
     row = (i-1)//4
@@ -204,7 +203,7 @@ for i in range(1,13):
     y_new = [xi*i for xi in x]
     ax.plot(x, y_new)
     ax.set_title('{}*x'.format(i))
-    ax.set_yticks(np.linspace(0,120,11))
+    ax.set_yticks(np.linspace(0,1200,11))
 ```
 
 
