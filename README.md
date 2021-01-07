@@ -51,18 +51,16 @@ print (x, y, z)
      9604 9801]
 
 
-Import `matplotlib.pyplot` as `plt` and set `%matplotlib inline`  for generating inline images in jupyter notebooks.
+Import `matplotlib.pyplot` as `plt` and set `%matplotlib inline`  for generating inline images in Jupyter notebooks.
 
 
 ```python
-# import matplotlib.pyplot and set inline plotting 
 import matplotlib.pyplot as plt
 
-# Comment out after finishing lab to pass the pytest
 %matplotlib inline
 ```
 
-Now that we have our data all set and matplotlib in our python environment, we can try some basic plotting techniques.
+Now that we have our data all set and Matplotlib in our Python environment, we can try some basic plotting techniques.
 
 ## Exercise 1
 
@@ -72,15 +70,24 @@ Perform the following steps in the cell below:
 * Use `add_axes()` to add an axis `ax` to the canvas at absolute location [0,0,1,1].
 * Plot (x,y) on that axes and set the labels and title. 
 
+The graph you create should look like this:
+
+![line plot](graph_images/line_plot.png)
+
 
 ```python
+
+# Set up figure and axes
 fig = plt.figure()
 ax = fig.add_axes([0,0,1,1])
+
+# Plot x and y as a line graph
 ax.plot(x,y)
+
+# Set labels and title
 ax.set_xlabel('x-axis label')
 ax.set_ylabel('y-axis label')
-ax.set_title('Plot title')
-plt.show()
+ax.set_title('Plot title');
 ```
 
 
@@ -93,18 +100,28 @@ This was easy, let's move on to drawing multiple plots within a figure space.
 
 Perform following actions:
 
-* Create a subplots figure with 3 rows and 4 columns
-* Plot the lines $y=x$, $y=2x$, $y=3x$, $y=4x$,...$y=10x$, $y=11x$, $y=12x$ in the respective subplots over the domain [0,10].
+* Create a subplots figure with 3 rows and 4 columns and a `figsize` of 15 by 15
+* Plot the lines $y=x$, $y=2x$, $y=3x$, $y=4x$,...$y=10x$, $y=11x$, $y=12x$ in the respective subplots. So, $y=x$ in the 0th row, 0th column, $y=2x$ in the 0th row, 1th column, etc.
+* Use the variable `x` that we have already created for you as $x$, then calculate your own $y$. Call this $y$ `y_new` (within a for loop).
+
+The graph you create should look like this:
+
+![subplots showing 1x through 12x](graph_images/subplots_1x_12x.png)
 
 
 ```python
 fig, axes = plt.subplots(nrows=3, ncols=4, figsize=(15,15))
 
 for i in range(1,13):
+    # for both row and col, subtract 1 from i, since we are starting
+    # i at 1 but the row/col indices start at 0
     row = (i-1)//4
     col = i%4-1
     ax = axes[row][col]
-    y_new = [xi*i for xi in x]
+    
+    # with NumPy broadcasting we can just multiply x by i and every
+    # element in x is multiplied
+    y_new = i*x
     ax.plot(x, y_new)
     ax.set_title('{}*x'.format(i))
 ```
@@ -115,8 +132,13 @@ for i in range(1,13):
 
 ## Exercise 3
 
-Repeat the above exercise, but standardize the axes of all of your subplots so that you can more easily compare the slopes of the lines. You might need to make your figure bigger to keep the y-axis labels legible.
+As you might have noticed, the y-axis of those graphs automatically adjusted based on the value of `y_new`. This creates the appearance of all of the lines having the same slope, even though they actually have quite different slopes.
 
+Repeat the above exercise, but standardize the axes of all of your subplots so that you can more easily compare the slopes of the lines. Because the final graph goes up to 1200, use this as the maximum for all plots.
+
+The graph you create should look like this:
+
+![subplots showing 1x through 12x with the same y-axis](graph_images/subplots_1x_12x_normalized.png)
 
 
 ```python
@@ -126,9 +148,10 @@ for i in range(1,13):
     row = (i-1)//4
     col = i%4-1
     ax = axes[row][col]
-    y_new = [xi*i for xi in x]
+    y_new = i*x
     ax.plot(x, y_new)
     ax.set_title('{}*x'.format(i))
+    # this line is the only change, setting the yticks
     ax.set_yticks(np.linspace(0,1200,11))
 ```
 
@@ -138,34 +161,34 @@ for i in range(1,13):
 
 ## Exercise 4
 
-Perform following steps in the cell below:
+Perform the following steps in the cell below:
 
-* Create a figure of size 8x6 inches
-* Add two axes to the figure by dividing it in 1 row and 2 columns with the `add_subplot` method 
-* Plot (x,y) and (x,z) on the ax1 and ax2 respectively. 
+* Using `plt.subplots`, create a figure of size 8 by 6 with 2 columns, and "unpack" the 2 created axes into variables `ax1` and `ax2`.
+* Plot (`x`,`y`) and (`x`,`z`) on `ax1` and `ax2` respectively. 
 * Set the line width of first axes to 3, line style as dotted and color it red.
 * Set the line width of second axes to 5, line style as dash-dot (-.) and color it blue.
 * Give the plots some labels and titles
 
+(If `y` is looking "off" but your graph code seems correct, it's possible you overwrote the original values in a previous exercise. Go back to the top of the notebook and re-run the first cell that created `x`, `y`, and `z`.)
+
+The graph you create should look like this:
+
+![two subplots](graph_images/subplots_left_right.png)
+
 
 ```python
-new_figure = plt.figure(figsize=(8,6))
+new_figure, (ax1, ax2) = plt.subplots(figsize=(8,6), ncols=2)
 
-ax = new_figure.add_subplot(121)
-ax2 = new_figure.add_subplot(122)
-
-ax.plot(x, y, color='red', linewidth=3, linestyle = ':')
+ax1.plot(x, y, color='red', linewidth=3, linestyle = ':')
 ax2.plot(x, z, color='blue', linewidth=5, linestyle = '-.')
 
-ax.set_xlabel('variable - x')
-ax.set_ylabel('variable - y')
-ax.set_title ('Left Plot')
+ax1.set_xlabel('variable - x')
+ax1.set_ylabel('variable - y')
+ax1.set_title ('Left Plot')
 
 ax2.set_xlabel('variable - x')
 ax2.set_ylabel('variable - z')
-ax2.set_title ('Right Plot')
-
-plt.show()
+ax2.set_title ('Right Plot');
 ```
 
 
@@ -174,36 +197,34 @@ plt.show()
 
 ## Exercise 5
 
-Above figure looks fine but a bit out of proportion. Let's resize this to make the plots look more appealing by ensuring that subplots are square in shape. Also change the line style of first plot (left) and change the type of 2nd plot (right) to a scatter plot with a `^` marker style.
+The above figure looks fine but a bit out of proportion. Let's resize this to make the plots look more appealing by ensuring that subplots are square in shape. Also change the line style of first plot (left) and change the type of 2nd plot (right) to a scatter plot with a `^` marker style.
+
+The plot you create should look like this:
+
+![two square subplots](graph_images/subplots_left_right_square.png)
 
 
 ```python
-new_figure = plt.figure(figsize=(18,8))
+new_figure, (ax1, ax2) = plt.subplots(figsize=(18,8), ncols=2)
 
-ax = new_figure.add_subplot(121)
-ax2 = new_figure.add_subplot(122)
-
-ax.plot(x, y, color='red', linewidth=3, linestyle = '-')
+ax1.plot(x, y, color='red', linewidth=3, linestyle = '-')
 ax2.scatter(x, z, color='blue',  marker='^')
 
-ax.set_xlabel('variable - x')
-ax.set_ylabel('variable - y')
-ax.set_title ('Left Plot')
+ax1.set_xlabel('variable - x')
+ax1.set_ylabel('variable - y')
+ax1.set_title ('Left Plot')
 
 ax2.set_xlabel('variable - x')
 ax2.set_ylabel('variable - z')
-ax2.set_title ('Right Plot')
-
-plt.show()
+ax2.set_title ('Right Plot');
 ```
 
 
 ![png](index_files/index_13_0.png)
 
 
-Congratulations! You've now learned the basics of plotting, labeling and customizing plot with matplotlib. The following lessons will focus on employing these techniques to plot multiple data types in different contexts. 
-
+Congratulations! You've practiced the basics of plotting, labeling, and customizing plots with Matplotlib. You will use these skills throughout the rest of the course. 
 
 ## Summary
 
-This lab focused on ensuring that you understand the basics plotting techniques in matplotlib using plotting objects and functions to draw single plots, multiple/subplots using absolute and relative plotting. You also learned how to customize the plots with labels, titles and axes definitions. 
+This lab focused on ensuring that you understand the basic plotting techniques in Matplotlib using plotting objects and functions to draw single plots, as well as figures with multiple subplots. You also practiced customizing the plots with labels, titles and axes definitions. 
