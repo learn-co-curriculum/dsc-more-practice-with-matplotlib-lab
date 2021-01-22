@@ -212,7 +212,9 @@ Perform the following steps in the cell below:
 * Set the line width of second axes to 5, line style as dash-dot (-.) and color it blue.
 * Give the plots some labels and titles
 
-(If `y` is looking "off" but your graph code seems correct, it's possible you overwrote the original values in a previous exercise. Go back to the top of the notebook and re-run the first cell that created `x`, `y`, and `z`.)
+Hints:
+* If `y` is looking "off" but your graph code seems correct, it's possible you overwrote the original values in a previous exercise. Go back to the top of the notebook and re-run the first cell that created `x`, `y`, and `z`.
+* The label `variable - z` is intentionally overlapping the graph on the left. We will address that issue later in the lab.
 
 The graph you create should look like this:
 
@@ -277,6 +279,65 @@ ax2.set_title ('Right Plot');
 
 ![png](index_files/index_20_0.png)
 
+
+**Note:** Instead of changing the plot size as you did in Exercise 5, one other technique you could have used to help with overlapping plot labels is a "tight layout" (see [Matplotlib guide](https://matplotlib.org/tutorials/intermediate/tight_layout_guide.html)).
+
+By default, Matplotlib doesn't consider the space taken by axes labels when it determines how to draw the plots. Turning on the tight layout setting tells Matplotlib to include the axes labels in this calculation, in order to avoid clipping or overlapping.
+
+Here is a version of the Exercise 4 solution using a tight layout:
+
+
+```python
+# Run this cell without changes
+
+new_figure, (ax1, ax2) = plt.subplots(figsize=(8,6), ncols=2)
+# Telling Matplotlib to include axes labels when creating the layout
+new_figure.set_tight_layout(True)
+
+ax1.plot(x, y, color='red', linewidth=3, linestyle = ':')
+ax2.plot(x, z, color='blue', linewidth=5, linestyle = '-.')
+
+ax1.set_xlabel('variable - x')
+ax1.set_ylabel('variable - y')
+ax1.set_title ('Left Plot')
+
+ax2.set_xlabel('variable - x')
+ax2.set_ylabel('variable - z')
+ax2.set_title ('Right Plot');
+```
+
+
+```python
+# __SOLUTION__
+
+new_figure, (ax1, ax2) = plt.subplots(figsize=(8,6), ncols=2)
+new_figure.set_tight_layout(True)
+
+ax1.plot(x, y, color='red', linewidth=3, linestyle = ':')
+ax2.plot(x, z, color='blue', linewidth=5, linestyle = '-.')
+
+ax1.set_xlabel('variable - x')
+ax1.set_ylabel('variable - y')
+ax1.set_title ('Left Plot')
+
+ax2.set_xlabel('variable - x')
+ax2.set_ylabel('variable - z')
+ax2.set_title ('Right Plot');
+```
+
+
+![png](index_files/index_23_0.png)
+
+
+Compared to Exercise 4, we are now avoiding the label `variable - z` overlapping with the plot on the left, without changing the overall figure size like we did in Exercise 5.
+
+Note that the above example uses the object-oriented interface, by calling the `.set_tight_layout` method on the figure object.
+
+A tight layout can also be set using the PyPlot interface (state machine interface) introduced in the previous lesson. You will frequently see this in examples online, adding this line of code as the last line before the figure is displayed:
+
+```python
+plt.tight_layout()
+```
 
 Congratulations! You've practiced the basics of plotting, labeling, and customizing plots with Matplotlib. You will use these skills throughout the rest of the course. 
 
