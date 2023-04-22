@@ -21,16 +21,16 @@ Let's give you a head start by generating some data for you to plot:
 import numpy as np
 
 # Generate a list of numbers from 0 to 99
-x = np.arange(0,100)
+x_values = np.arange(0,100)
 
-# Multiply values of x with 2 to get y
-y = x*2
+# Multiply values of x_values with 2 to get y_values
+y_values = x*2
 
-# Calculate square of values in for variable z
-z = x**2
+# Calculate square of values in for variable z_values
+z_values = x**2
 
-# Print x, y and z
-print (x, y, z)
+# Print x_values, y_values and z_values
+print (x_values, y_values, z_values)
 ```
 
 
@@ -39,16 +39,16 @@ print (x, y, z)
 import numpy as np
 
 # Generate a list of numbers from 0 to 99
-x = np.arange(0,100)
+x_values = np.arange(0,100)
 
 # Multiply values of x with 2 to get y
-y = x*2
+y_values = x*2
 
 # Calculate square of values in for variable z
-z = x**2
+z_values = x**2
 
 # Print x, y and z
-print (x, y, z)
+print (x_values, y_values, z_values)
 ```
 
     [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
@@ -113,7 +113,7 @@ fig = plt.figure()
 ax = fig.add_axes([0,0,1,1])
 
 # Plot x and y as a line graph
-ax.plot(x,y)
+ax.plot(x_values,y_values)
 
 # Set labels and title
 ax.set_xlabel('x-axis label')
@@ -122,7 +122,9 @@ ax.set_title('Plot title');
 ```
 
 
+    
 ![png](index_files/index_8_0.png)
+    
 
 
 This was easy, let's move on to drawing multiple plots within a figure space. 
@@ -158,13 +160,15 @@ for i in range(1,13):
     
     # with NumPy broadcasting we can just multiply x by i and every
     # element in x is multiplied
-    y_new = i*x
-    ax.plot(x, y_new)
+    y_new = i*x_values
+    ax.plot(x_values, y_new)
     ax.set_title('{}*x'.format(i))
 ```
 
 
+    
 ![png](index_files/index_11_0.png)
+    
 
 
 ## Exercise 3
@@ -191,15 +195,17 @@ for i in range(1,13):
     row = (i-1)//4
     col = i%4-1
     ax = axes[row][col]
-    y_new = i*x
-    ax.plot(x, y_new)
+    y_new = i*x_values
+    ax.plot(x_values, y_new)
     ax.set_title('{}*x'.format(i))
     # this line is the only change, setting the yticks
     ax.set_yticks(np.linspace(0,1200,11))
 ```
 
 
+    
 ![png](index_files/index_14_0.png)
+    
 
 
 ## Exercise 4
@@ -230,8 +236,8 @@ The graph you create should look like this:
 # __SOLUTION__ 
 new_figure, (ax1, ax2) = plt.subplots(figsize=(8,6), ncols=2)
 
-ax1.plot(x, y, color='red', linewidth=3, linestyle = ':')
-ax2.plot(x, z, color='blue', linewidth=5, linestyle = '-.')
+ax1.plot(x_values, y_values, color='red', linewidth=3, linestyle = ':')
+ax2.plot(x_values, z_values, color='blue', linewidth=5, linestyle = '-.')
 
 ax1.set_xlabel('variable - x')
 ax1.set_ylabel('variable - y')
@@ -243,7 +249,9 @@ ax2.set_title ('Right Plot');
 ```
 
 
+    
 ![png](index_files/index_17_0.png)
+    
 
 
 ## Exercise 5
@@ -264,8 +272,8 @@ The plot you create should look like this:
 # __SOLUTION__ 
 new_figure, (ax1, ax2) = plt.subplots(figsize=(18,8), ncols=2)
 
-ax1.plot(x, y, color='red', linewidth=3, linestyle = '-')
-ax2.scatter(x, z, color='blue',  marker='^')
+ax1.plot(x_values, y_values, color='red', linewidth=3, linestyle = '-')
+ax2.scatter(x_values, z_values, color='blue',  marker='^')
 
 ax1.set_xlabel('variable - x')
 ax1.set_ylabel('variable - y')
@@ -277,7 +285,9 @@ ax2.set_title ('Right Plot');
 ```
 
 
+    
 ![png](index_files/index_20_0.png)
+    
 
 
 **Note:** Instead of changing the plot size as you did in Exercise 5, one other technique you could have used to help with overlapping plot labels is a "tight layout" (see [Matplotlib guide](https://matplotlib.org/tutorials/intermediate/tight_layout_guide.html)).
@@ -294,8 +304,8 @@ new_figure, (ax1, ax2) = plt.subplots(figsize=(8,6), ncols=2)
 # Telling Matplotlib to include axes labels when creating the layout
 new_figure.set_tight_layout(True)
 
-ax1.plot(x, y, color='red', linewidth=3, linestyle = ':')
-ax2.plot(x, z, color='blue', linewidth=5, linestyle = '-.')
+ax1.plot(x_values, y_values, color='red', linewidth=3, linestyle = ':')
+ax2.plot(x_values, z_values, color='blue', linewidth=5, linestyle = '-.')
 
 ax1.set_xlabel('variable - x')
 ax1.set_ylabel('variable - y')
@@ -313,8 +323,8 @@ ax2.set_title ('Right Plot');
 new_figure, (ax1, ax2) = plt.subplots(figsize=(8,6), ncols=2)
 new_figure.set_tight_layout(True)
 
-ax1.plot(x, y, color='red', linewidth=3, linestyle = ':')
-ax2.plot(x, z, color='blue', linewidth=5, linestyle = '-.')
+ax1.plot(x_values, y_values, color='red', linewidth=3, linestyle = ':')
+ax2.plot(x_values, z_values, color='blue', linewidth=5, linestyle = '-.')
 
 ax1.set_xlabel('variable - x')
 ax1.set_ylabel('variable - y')
@@ -326,7 +336,9 @@ ax2.set_title ('Right Plot');
 ```
 
 
+    
 ![png](index_files/index_23_0.png)
+    
 
 
 Compared to Exercise 4, we are now avoiding the label `variable - z` overlapping with the plot on the left, without changing the overall figure size like we did in Exercise 5.
