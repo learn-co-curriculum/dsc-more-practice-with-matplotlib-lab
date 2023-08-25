@@ -97,7 +97,7 @@ Perform the following steps in the cell below:
 
 The graph you create should look like this:
 
-![line plot](graph_images/line_plot.png)
+![line plot](https://curriculum-content.s3.amazonaws.com/data-science/images/line_plot.png)
 
 
 ```python
@@ -139,7 +139,7 @@ Perform following actions:
 
 The graph you create should look like this:
 
-![subplots showing 1x through 12x](graph_images/subplots_1x_12x.png)
+![subplots showing 1x through 12x](https://curriculum-content.s3.amazonaws.com/data-science/images/subplots_1x_12x.png)
 
 
 ```python
@@ -179,7 +179,7 @@ Repeat the above exercise, but standardize the axes of all of your subplots so t
 
 The graph you create should look like this:
 
-![subplots showing 1x through 12x with the same y-axis](graph_images/subplots_1x_12x_normalized.png)
+![subplots showing 1x through 12x with the same y-axis](https://curriculum-content.s3.amazonaws.com/data-science/images/subplots_1x_12x_normalized.png)
 
 
 ```python
@@ -224,7 +224,7 @@ Hints:
 
 The graph you create should look like this:
 
-![two subplots](graph_images/subplots_left_right.png)
+![two subplots](https://curriculum-content.s3.amazonaws.com/data-science/images/subplots_left_right.png)
 
 
 ```python
@@ -260,7 +260,7 @@ The above figure looks fine but a bit out of proportion. Let's resize this to ma
 
 The plot you create should look like this:
 
-![two square subplots](graph_images/subplots_left_right_square.png)
+![two square subplots](https://curriculum-content.s3.amazonaws.com/data-science/images/subplots_left_right_square.png)
 
 
 ```python
