@@ -23,10 +23,10 @@ import numpy as np
 x_values = np.arange(0,100)
 
 # Multiply values of x with 2 to get y
-y_values = x*2
+y_values = x_values*2
 
 # Calculate square of values in for variable z
-z_values = x**2
+z_values = x_values**2
 
 # Print x, y and z
 print (x_values, y_values, z_values)
